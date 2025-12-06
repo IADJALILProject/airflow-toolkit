@@ -30,7 +30,9 @@ def load_env_config(
 
     filename = base_dir / f"env_{resolved_env}.yaml"
     if not filename.exists():
-        raise FileNotFoundError(f"Config file not found for env '{resolved_env}': {filename}")
+        raise FileNotFoundError(
+            f"Config file not found for env '{resolved_env}': {filename}"
+        )
 
     with filename.open("r", encoding="utf-8") as f:
         return yaml.safe_load(f) or {}

@@ -15,7 +15,15 @@ class FakeHttpHook:
     def __init__(self, *args, **kwargs):
         pass
 
-    def run(self, endpoint, method="GET", params=None, headers=None, return_json=True, timeout=30):
+    def run(
+        self,
+        endpoint,
+        method="GET",
+        params=None,
+        headers=None,
+        return_json=True,
+        timeout=30,
+    ):
         return b"dummy-content"
 
 

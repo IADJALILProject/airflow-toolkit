@@ -45,7 +45,9 @@ class ClickHouseHook(BaseHook):
         )
         return self._client
 
-    def run(self, sql: str, params: Optional[dict[str, Any]] = None) -> List[Iterable[Any]]:
+    def run(
+        self, sql: str, params: Optional[dict[str, Any]] = None
+    ) -> List[Iterable[Any]]:
         """
         Exécute une requête SQL et retourne un itérable de lignes.
         """
