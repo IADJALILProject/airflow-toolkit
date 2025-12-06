@@ -72,9 +72,7 @@ class DbtRunnerOperator(BaseOperator):
 
     def execute(self, context: Context) -> None:
         if not self.project_dir.exists():
-            raise FileNotFoundError(
-                f"dbt project_dir does not exist: {self.project_dir}"
-            )
+            raise FileNotFoundError(f"dbt project_dir does not exist: {self.project_dir}")
 
         cmd = self.build_command()
         self.logger.info("Exécution de la commande dbt : %s", " ".join(cmd))

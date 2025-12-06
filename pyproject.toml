@@ -1,10 +1,10 @@
 [project]
 name = "airflow-toolkit"
 version = "0.2.0"
-description = "Librairie open source d'outils, opérateurs et hooks pour Apache Airflow."
+description = "Librairie d'operators, hooks et utilitaires pour Apache Airflow."
 authors = [{ name = "Anis Salah-Bey" }]
-requires-python = ">=3.10"
 readme = "README.md"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 
 dependencies = [
@@ -25,12 +25,43 @@ dev = [
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
+# -----------------------
+# Pytest configuration
+# -----------------------
 [tool.pytest.ini_options]
 testpaths = [
-  "tests/test_date_utils.py",
-  "tests/test_logging_utils.py",
-  "tests/test_env_utils.py",
-  "tests/test_filesystem_transfer_operator.py",
-  "tests/test_http_to_filesystem_operator.py",
-  "tests/test_dbt_runner_operator.py",
+  "tests/unit",
+  "tests/operators",
+  "tests/integration",
 ]
+
+# -----------------------
+# Black configuration
+# -----------------------
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+include = ".*\\.py$"
+exclude = """
+(
+  .git
+ | .venv
+ | build
+ | dist
+)
+"""
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = [
+  ".git",
+  ".venv",
+  "build",
+  "dist",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E402"]
+

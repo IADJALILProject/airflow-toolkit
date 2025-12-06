@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import Any, Optional
 
+from airflow.hooks.base import BaseHook
 from airflow.models import BaseOperator
 from airflow.utils.context import Context
-from airflow.hooks.base import BaseHook
 
 from airflow_toolkit.utils.logging_utils import get_logger
 

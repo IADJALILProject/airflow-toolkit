@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from .logging_utils import get_logger
-from .date_utils import utc_now, days_ago
 from .alerts import slack_failure_alert
+from .date_utils import days_ago, utc_now
 from .env_utils import load_env_config
+from .logging_utils import get_logger
 
 __all__ = [
     "get_logger",
