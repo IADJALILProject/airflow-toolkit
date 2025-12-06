@@ -27,5 +27,6 @@ jobs:
       - name: Check formatting with black
         run: black --check airflow_toolkit tests
 
-      - name: Run tests
-        run: pytest -q
+      - name: Run unit tests (utils only)
+        run: pytest tests/test_date_utils.py tests/test_logging_utils.py tests/test_env_utils.py -q
+

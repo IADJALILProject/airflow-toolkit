@@ -1,0 +1,69 @@
+# -----------------------------
+# Python standard ignores
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg*
+*.egg-info/
+.eggs/
+dist/
+build/
+wheelhouse/
+
+# -----------------------------
+# Virtual environments
+# -----------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# -----------------------------
+# Airflow-related
+# -----------------------------
+airflow.db
+airflow.cfg
+logs/
+*.log
+
+# -----------------------------
+# IDE / Editor files
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------
+# OS / System
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Tests & coverage
+# -----------------------------
+htmlcov/
+.coverage
+.coverage.*
+.cache/
+pytest_cache/
+.tox/
+
+# -----------------------------
+# Temp & generated files
+# -----------------------------
+tmp/
+*.tmp
+*.bak
+*.old
+
+# -----------------------------
+# YAML / config local overrides
+# -----------------------------
+*.local.yaml
+.env
+.env.*
