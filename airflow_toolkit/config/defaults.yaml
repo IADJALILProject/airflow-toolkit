@@ -1,0 +1,10 @@
+alerts:
+  enabled: true
+  slack:
+    enabled: false
+    channel: "#alerts-airflow"
+    webhook_url: ""
+logging:
+  level: "INFO"
+env:
+  default: "dev"

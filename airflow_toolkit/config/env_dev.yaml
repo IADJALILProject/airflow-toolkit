@@ -1,0 +1,6 @@
+environment: "dev"
+data_root: "/opt/airflow/data"
+log_level: "DEBUG"
+features:
+  enable_http_operators: true
+  enable_clickhouse: true
