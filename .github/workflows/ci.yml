@@ -23,5 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install .[dev]
 
+      - name: Lint with ruff
+        run: ruff airflow_toolkit tests
+
+      - name: Check formatting with black
+        run: black --check airflow_toolkit tests
+
       - name: Run tests
         run: pytest -q
