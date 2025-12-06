@@ -1,12 +1,14 @@
-from pathlib import Path
-
-from airflow_toolkit.operators.http_to_filesystem import HttpToFilesystemOperator
 import pytest
 
 pytest.skip(
     "Tests d’intégration Airflow (operators) désactivés par défaut sur l’environnement local Python 3.12.",
     allow_module_level=True,
 )
+
+
+from pathlib import Path
+
+from airflow_toolkit.operators.http_to_filesystem import HttpToFilesystemOperator
 
 
 class FakeHttpHook:
