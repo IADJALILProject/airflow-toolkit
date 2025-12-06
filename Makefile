@@ -33,15 +33,15 @@ test:
 	$(PYTEST)
 
 test-unit:
-	$(PYTEST) tests/test_date_utils.py tests/test_logging_utils.py tests/test_env_utils.py
+	$(PYTEST) tests/unit/test_date_utils.py tests/unit/test_logging_utils.py tests/unit/test_env_utils.py
 
 test-operators:
-	$(PYTEST) tests/test_filesystem_transfer_operator.py tests/test_http_to_filesystem_operator.py
+	$(PYTEST) tests/operators/test_filesystem_transfer_operator.py tests/operators/test_http_to_filesystem_operator.py
 
 test-integration:
 	AIRFLOW__DATABASE__SQL_ALCHEMY_CONN="sqlite:////tmp/airflow_test.db" \
 	AIRFLOW__CORE__LOAD_EXAMPLES="False" \
-	$(PYTEST) tests/test_dbt_runner_operator.py
+	$(PYTEST) tests/integration/test_dbt_runner_operator.py
 
 # -------- ALL-IN-ONE --------
 
